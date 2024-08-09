@@ -21,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DB settings
 PATH_DB = BASE_DIR / ".env"
 load_dotenv(PATH_DB)
-PASSWORD_DB = os.getenv("PASSWORD_DB")
-USER_DB = os.getenv("USER_DB")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+POSTGRES_USER = os.getenv("POSTGRES_USER")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -92,11 +92,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("NAME"),
-        "USER": os.getenv("USER_DB"),
-        "PASSWORD": os.getenv("PASSWORD_DB"),
-        "HOST": os.getenv("HOST"),
-        "PORT": os.getenv("PORT"),
+        "NAME": os.getenv("POSTGRES_NAME"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("POSTGRES_HOST"),
+        "PORT": os.getenv("POSTGRES_PORT"),
     }
 }
 
